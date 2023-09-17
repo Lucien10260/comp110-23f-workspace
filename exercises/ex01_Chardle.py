@@ -1,4 +1,4 @@
-"""EX01 - Chardle"""
+"""EX01 - Chardle."""
 __author__ = "730521715"
 word = input("Enter a 5-character word: ")
 if len(word) != 5:
