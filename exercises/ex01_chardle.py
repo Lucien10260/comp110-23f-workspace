@@ -42,13 +42,3 @@ elif count == 1:
     print("1 instance of " + character + " found in " + word)
 else:
     print(str(count) + " instances of " + character + " found in " + word)
-
-if len(word) != 5:
-    print("Error: Word must contain 5 characters")
-    exit()
-
-character = input("Enter a single character: ")
-
-if len(character) != 1:
-    print("Error: Character must be a single character.")
-    exit()
