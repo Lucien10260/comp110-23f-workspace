@@ -14,7 +14,7 @@ if len(character) != 1:
     print("Error: Character must be a single character.")
     exit()
 
-print("Searching for " + character + " in "+ word)
+print("Searching for " + character + " in " + word)
 
 count = 0
 
