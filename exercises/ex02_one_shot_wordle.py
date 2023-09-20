@@ -1,4 +1,4 @@
-"""EX01_one_shot_wordle"""
+"""EX01_one_shot_wordle."""
 __author__ = "730521715"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
@@ -19,7 +19,6 @@ for idx in range(len(secret)):
             if guess[idx] == secret[alt_idx] and idx != alt_idx:
                 found = True
             alt_idx += 1
-
         if found:
             result_string += YELLOW_BOX
         else:
