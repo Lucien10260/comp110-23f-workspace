@@ -3,12 +3,13 @@ __author__ = "730521715"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-secret = "python"
+secret = "bullet"
 guess = input(f"What is your {len(secret)}-letter guess? ")
 while len(guess) != len(secret):
     guess = input(f"That was not {len(secret)} letters! Try again: ")
 result_string = ""
-for idx in range(len(secret)):
+idx = 0
+while idx < len(secret):
     if guess[idx] == secret[idx]:
         result_string += GREEN_BOX
     else:
@@ -23,6 +24,7 @@ for idx in range(len(secret)):
             result_string += YELLOW_BOX
         else:
             result_string += WHITE_BOX
+    idx += 1
 print(result_string)
 if guess == secret:
     print("Woo! You got it!")
