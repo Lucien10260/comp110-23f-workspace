@@ -13,7 +13,6 @@ while idx < len(secret):
     if guess[idx] == secret[idx]:
         result_string += GREEN_BOX
     else:
-        # Check if letter exists in other positions
         found = False
         alt_idx = 0
         while not found and alt_idx < len(secret):
