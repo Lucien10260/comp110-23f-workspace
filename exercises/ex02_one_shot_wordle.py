@@ -1,16 +1,12 @@
 """EX01_one_shot_wordle"""
 __author__ = "730521715"
-
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-
 secret = "python"
 guess = input(f"What is your {len(secret)}-letter guess? ")
-
 while len(guess) != len(secret):
     guess = input(f"That was not {len(secret)} letters! Try again: ")
-
 result_string = ""
 for idx in range(len(secret)):
     if guess[idx] == secret[idx]:
@@ -28,9 +24,7 @@ for idx in range(len(secret)):
             result_string += YELLOW_BOX
         else:
             result_string += WHITE_BOX
-
 print(result_string)
-
 if guess == secret:
     print("Woo! You got it!")
 else:
