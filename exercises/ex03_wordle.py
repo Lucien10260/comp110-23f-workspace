@@ -22,7 +22,6 @@ def contains_char(word: str, char_to_check: str) -> bool:
 def emojified(guess: str, secret: str) -> str:
     assert len(guess) == len(secret)
     result = "" 
-    # Compare each character in guess to corresponding character in secret
     for i in range(len(guess)):
         if guess[i] == secret[i]:
             result += GREEN_BOX
