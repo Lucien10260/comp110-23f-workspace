@@ -2,12 +2,11 @@
 
 __author__ = "730521715"
 
-# Part 1: w_sum() function
+
 def w_sum(vals: list[float]) -> float:
-    """
-    Compute the sum of a list of floats using a while loop.
-    
-    Parameters:
+    """Compute the sum of a list of floats using a while loop.
+
+    Args:
         vals (list[float]): List of floats to be summed.
 
     Returns:
@@ -21,12 +20,10 @@ def w_sum(vals: list[float]) -> float:
     return total
 
 
-# Part 2: f_sum() function
 def f_sum(vals: list[float]) -> float:
-    """
-    Compute the sum of a list of floats using a for loop.
-    
-    Parameters:
+    """Compute the sum of a list of floats using a for loop.
+
+    Args:
         vals (list[float]): List of floats to be summed.
 
     Returns:
@@ -38,12 +35,10 @@ def f_sum(vals: list[float]) -> float:
     return total
 
 
-# Part 3: f_range_sum() function
 def f_range_sum(vals: list[float]) -> float:
-    """
-    Compute the sum of a list of floats using a for loop with range.
-    
-    Parameters:
+    """Compute the sum of a list of floats using a for loop with range.
+
+    Args:
         vals (list[float]): List of floats to be summed.
 
     Returns:
