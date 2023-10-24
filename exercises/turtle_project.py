@@ -1,8 +1,9 @@
 """Drawing a simple car using the Turtle module."""
- 
+
 __author__ = "730521715"
- 
-from turtle import Turtle, colormode, done, tracer, update
+
+from turtle import Turtle, done, tracer, update
+
 
 def draw_car_body(a_turtle: Turtle, x: float, y: float) -> None:
     """Draw the body of the car."""
@@ -17,7 +18,8 @@ def draw_car_body(a_turtle: Turtle, x: float, y: float) -> None:
         a_turtle.forward(50)
         a_turtle.left(90)
     a_turtle.end_fill()
-    
+
+
 def draw_wheel(a_turtle: Turtle, x: float, y: float, radius: float) -> None:
     """Draw a wheel of the car."""
     a_turtle.penup()
@@ -27,6 +29,7 @@ def draw_wheel(a_turtle: Turtle, x: float, y: float, radius: float) -> None:
     a_turtle.begin_fill()
     a_turtle.circle(radius)
     a_turtle.end_fill()
+
 
 def draw_window(a_turtle: Turtle, x: float, y: float) -> None:
     """Draw the windows of the car."""
@@ -42,6 +45,7 @@ def draw_window(a_turtle: Turtle, x: float, y: float) -> None:
         a_turtle.left(90)
     a_turtle.end_fill()
 
+
 def main() -> None:
     """The entrypoint of the car drawing scene."""
     tracer(0, 0)  # Disable delay in tracing
@@ -55,6 +59,7 @@ def main() -> None:
     
     update()  # Now update the rendering
     done()
+
 
 if __name__ == "__main__":
     main()
