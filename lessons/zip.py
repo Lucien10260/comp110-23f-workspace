@@ -1,11 +1,11 @@
 """Combining two lists into a dictionary."""
 
-__author__ = "730521715"
+__author__ = "YOUR_PID"
 
 from typing import List, Dict
 
 
-def zip_lists(strings: List[str], numbers: List[int]) -> Dict[str, int]:
+def zip(strings: List[str], numbers: List[int]) -> Dict[str, int]:
     """Combine two lists into a dictionary.
     
     Parameters:
@@ -25,5 +25,5 @@ def zip_lists(strings: List[str], numbers: List[int]) -> Dict[str, int]:
 
 # Testing the function
 if __name__ == "__main__":
-    result = zip_lists(["Happy", "Tuesday"], [1, 2])
+    result = zip(["Happy", "Tuesday"], [1, 2])
     print(result)  # Expected: {"Happy": 1, "Tuesday": 2}
