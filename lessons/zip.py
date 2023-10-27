@@ -4,7 +4,7 @@ __author__ = "730521715"
 
 from typing import List, Dict
 
-def custom_zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
+def zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
     """
     Combines two lists into a dictionary.
 
@@ -19,9 +19,13 @@ def custom_zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
     if len(strings) != len(integers) or not strings or not integers:
         return {}
 
-    return dict(zip(strings, integers))
+    combined = {}
+    for i in range(len(strings)):
+        combined[strings[i]] = integers[i]
+    
+    return combined
 
 # Example usage:
 if __name__ == "__main__":
-    result = custom_zip(["Happy", "Tuesday"], [1, 2])
+    result = zip(["Happy", "Tuesday"], [1, 2])
     print(result)  # Expected output: {"Happy": 1, "Tuesday": 2}
