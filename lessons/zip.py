@@ -5,18 +5,9 @@ __author__ = "730521715"
 from typing import List, Dict
 
 def zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
-    """
-    Combines two lists into a dictionary.
-
-    Args:
-    - strings (List[str]): List of strings to be used as keys in the dictionary.
-    - integers (List[int]): List of integers to be used as values in the dictionary.
-
-    Returns:
-    - Dict[str, int]: Dictionary with strings as keys and integers as values.
-                      Returns an empty dictionary if the input lists are different lengths or if they are empty.
-    """
-    if len(strings) != len(integers) or not strings or not integers:
+    """Combines two lists into a dictionary."""
+    
+    if len(strings) != len(integers):
         return {}
 
     combined = {}
