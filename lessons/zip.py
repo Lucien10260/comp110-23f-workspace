@@ -1,23 +1,19 @@
 """
-This module provides a function to combine two lists into a dictionary.
+Combining two lists into a dictionary
 """
 
 __author__ = "730521715"
 
 from typing import List, Dict
 
-def zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
-    """Combines two lists into a dictionary."""
-    if len(strings) != len(integers):
+def zip(strings: List[str], numbers: List[int]) -> Dict[str, int]:
+    # Return an empty dictionary if the input lists are of different lengths or empty
+    if len(strings) != len(numbers) or not strings or not numbers:
         return {}
 
-    combined = {}
-    for i in range(len(strings)):
-        combined[strings[i]] = integers[i]
-    
-    return combined
+    return {strings[i]: numbers[i] for i in range(len(strings))}
 
-
+# Testing the function
 if __name__ == "__main__":
     result = zip(["Happy", "Tuesday"], [1, 2])
-    print(result)  # Expected output: {"Happy": 1, "Tuesday": 2}
+    print(result)  # Expected: {"Happy": 1, "Tuesday": 2}
