@@ -1,7 +1,10 @@
+"""
+This module provides a function to combine two lists into a dictionary.
+"""
+
 __author__ = "730521715"
 
 from typing import List, Dict
-
 
 def zip(strings: List[str], integers: List[int]) -> Dict[str, int]:
     """Combines two lists into a dictionary."""
