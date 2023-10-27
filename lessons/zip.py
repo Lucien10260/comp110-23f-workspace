@@ -5,19 +5,18 @@ __author__ = "730521715"
 from typing import List, Dict
 
 
-def zip(strings: List[str], numbers: List[int]) -> Dict[str, int]:
-    """
-    Combine two lists into a dictionary.
-
+def zip_lists(strings: List[str], numbers: List[int]) -> Dict[str, int]:
+    """Combine two lists into a dictionary.
+    
     Parameters:
-    - strings (List[str]): A list of strings.
-    - numbers (List[int]): A list of integers.
+    strings (List[str]): A list of strings to be used as dictionary keys.
+    numbers (List[int]): A list of integers to be used as dictionary values.
 
     Returns:
-    - Dict[str, int]: A dictionary with strings as keys and numbers as values.
+    Dict[str, int]: A dictionary with strings as keys and numbers as values.
+    If the input lists are of different lengths or empty, it returns an empty dictionary.
     """
     
-    # Return an empty dictionary if the input lists are of different lengths or empty
     if len(strings) != len(numbers) or not strings or not numbers:
         return {}
 
@@ -26,5 +25,5 @@ def zip(strings: List[str], numbers: List[int]) -> Dict[str, int]:
 
 # Testing the function
 if __name__ == "__main__":
-    result = zip(["Happy", "Tuesday"], [1, 2])
+    result = zip_lists(["Happy", "Tuesday"], [1, 2])
     print(result)  # Expected: {"Happy": 1, "Tuesday": 2}
