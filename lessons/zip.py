@@ -3,6 +3,7 @@
 __author__ = "730521715"
 
 from typing import List, Dict
+from builtins import zip as _zip
 
 def zip(keys: List[str], values: List[int]) -> Dict[str, int]:
     """Combine two lists into a dictionary.
@@ -19,4 +20,8 @@ def zip(keys: List[str], values: List[int]) -> Dict[str, int]:
     if len(keys) != len(values) or not keys or not values:
         return {}
     
-    return dict(zip(keys, values))
+    return dict(_zip(keys, values))
+
+
+if __name__ == "__main__":
+    print(zip(["Happy", "Tuesday", "Today"], [1, 2, 3]))  # Expected output: {"Happy": 1, "Tuesday": 2, "Today": 3}
