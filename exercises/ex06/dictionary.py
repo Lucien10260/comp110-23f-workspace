@@ -58,19 +58,19 @@ def main():
 if __name__ == "__main__":
     main()
 
-    def count(values):
-    # Establish an empty dictionary to store the result
-    result = {}
+def count(values):
+# Establish an empty dictionary to store the result
+result = {}
     
-    # Loop through each item in the input list
-    for item in values:
-        # Check to see if the item is already a key in the result dictionary
-        if item in result:
-            # Increase the count associated with that key by 1
-            result[item] += 1
-        else:
-            # Assign an initial count of 1 to that key in the result dictionary
-            result[item] = 1
+# Loop through each item in the input list
+for item in values:
+    # Check to see if the item is already a key in the result dictionary
+    if item in result:
+        # Increase the count associated with that key by 1
+        result[item] += 1
+    else:
+        # Assign an initial count of 1 to that key in the result dictionary
+        result[item] = 1
             
     # Return the resulting dictionary
     return result
