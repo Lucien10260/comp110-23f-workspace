@@ -2,21 +2,13 @@
 
 __author__ = "730521715"
 
-def invert(input_dict):
-    # Initialize an empty dictionary for the output
-    output_dict = {}
-    
-    # Iterate over items in the input dictionary
+def invert(input_dict: dict[str, str]) -> dict[str, str]:
+    inverted_dict = {}
     for key, value in input_dict.items():
-        # Check if the value is already a key in the output dictionary (which means a duplicate)
-        if value in output_dict:
-            # Raise a KeyError since we cannot have duplicate keys
-            raise KeyError(f"Duplicate key found: {value}")
-        
-        # Add the inverted key-value pair to the output dictionary
-        output_dict[value] = key
-    
-    return output_dict
+        if value in inverted_dict:
+            raise KeyError(f"Duplicate key found after inversion: {value}")
+        inverted_dict[value] = key
+    return inverted_dict -> dict[str,str]
 
 def favorite_color(colors_dict):
     # This dictionary will hold the count of each color
