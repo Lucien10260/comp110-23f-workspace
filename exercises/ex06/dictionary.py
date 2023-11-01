@@ -3,7 +3,7 @@
 __author__ = "730521715"
 
 
-def invert(input_dict: Dict[str, str]) -> Dict[str, str]:
+def invert(input_dict: dict[str, str]) -> dict[str, str]:
     """Invert the keys and values of a dictionary.
 
     Args:
@@ -15,7 +15,7 @@ def invert(input_dict: Dict[str, str]) -> Dict[str, str]:
     Raises:
         KeyError: If a value is not unique, i.e., it appears more than once.
     """
-    inverted_dict: Dict[str, str] = {}
+    inverted_dict: dict[str, str] = {}
     for key, value in input_dict.items():
         if value in inverted_dict:
             raise KeyError(f"Value {value} is not unique.")
@@ -23,7 +23,7 @@ def invert(input_dict: Dict[str, str]) -> Dict[str, str]:
     return inverted_dict
 
 
-def favorite_color(names_to_colors: Dict[str, str]) -> str:
+def favorite_color(names_to_colors: dict[str, str]) -> str:
     """Find the most frequent color in the dictionary.
 
     Args:
@@ -32,14 +32,14 @@ def favorite_color(names_to_colors: Dict[str, str]) -> str:
     Returns:
         The color that appears most frequently in the dictionary.
     """
-    color_counts: Dict[str, int] = {}
+    color_counts: dict[str, int] = {}
     for color in names_to_colors.values():
         color_counts[color] = color_counts.get(color, 0) + 1
     most_common_color = max(color_counts, key=lambda k: (color_counts[k], -list(names_to_colors.values()).index(k)))
     return most_common_color
 
 
-def count(values_list: List[str]) -> Dict[str, int]:
+def count(values_list: list[str]) -> dict[str, int]:
     """Count the occurrences of each string in a list.
 
     Args:
@@ -48,13 +48,13 @@ def count(values_list: List[str]) -> Dict[str, int]:
     Returns:
         A dictionary with keys as the unique strings from the list and values as the counts.
     """
-    count_dict: Dict[str, int] = {}
+    count_dict: dict[str, int] = {}
     for item in values_list:
         count_dict[item] = count_dict.get(item, 0) + 1
     return count_dict
 
 
-def alphabetizer(words_list: List[str]) -> Dict[str, List[str]]:
+def alphabetizer(words_list: list[str]) -> dict[str, list[str]]:
     """Organize words by their first letter.
 
     Args:
@@ -64,7 +64,7 @@ def alphabetizer(words_list: List[str]) -> Dict[str, List[str]]:
         A dictionary where each key is a lowercase letter and each value is a list
         of words that start with that letter, sorted in the order they appeared in the input list.
     """
-    alphabetized_dict: Dict[str, List[str]] = {}
+    alphabetized_dict: dict[str, list[str]] = {}
     for word in words_list:
         first_letter = word[0].lower()
         if first_letter not in alphabetized_dict:
@@ -73,7 +73,7 @@ def alphabetizer(words_list: List[str]) -> Dict[str, List[str]]:
     return alphabetized_dict
 
 
-def update_attendance(attendance_dict: Dict[str, List[str]], day: str, student: str) -> Dict[str, List[str]]:
+def update_attendance(attendance_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """Update the attendance record for a given day with the student's name.
 
     Args:
