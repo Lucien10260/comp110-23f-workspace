@@ -40,6 +40,27 @@ tdef update_attendance(attendance_dict: dict[str, list[str]], day: str, student:
         # If the day is not in the dictionary, create a new entry with the student in a new list
         attendance_dict[day] = [student]
     return attendance_dict
+def update_attendance(attendance_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
+    """
+    Update the attendance record for a given day with the student's name.
+
+    Args:
+        attendance_dict: A dictionary with days as keys and lists of students as values.
+        day: The day of the week to update attendance for.
+        student: The name of the student to add to the attendance.
+
+    Returns:
+        The updated dictionary with the student added to the attendance for the specified day.
+    """
+    # If the day is already in the dictionary, append the student to that day's list
+    if day in attendance_dict:
+        # Ensuring no duplicates if the student is already in the list for that day
+        if student not in attendance_dict[day]:
+            attendance_dict[day].append(student)
+    else:
+        # If the day is not in the dictionary, create a new entry with the student in a new list
+        attendance_dict[day] = [student]
+    return attendance_dict
 
 
 def favorite_colors(names_to_colors: dict[str, str]) -> str:
