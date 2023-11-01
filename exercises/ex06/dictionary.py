@@ -19,48 +19,6 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
         if value in inverted_dict:
             raise KeyError(f"Value {value} is not unique.")
         inverted_dict[value] = key
-tdef update_attendance(attendance_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
-    """
-    Update the attendance record for a given day with the student's name.
-
-    Args:
-        attendance_dict: A dictionary with days as keys and lists of students as values.
-        day: The day of the week to update attendance for.
-        student: The name of the student to add to the attendance.
-
-    Returns:
-        The updated dictionary with the student added to the attendance for the specified day.
-    """
-    # If the day is already in the dictionary, append the student to that day's list
-    if day in attendance_dict:
-        # Ensuring no duplicates if the student is already in the list for that day
-        if student not in attendance_dict[day]:
-            attendance_dict[day].append(student)
-    else:
-        # If the day is not in the dictionary, create a new entry with the student in a new list
-        attendance_dict[day] = [student]
-    return attendance_dict
-def update_attendance(attendance_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
-    """
-    Update the attendance record for a given day with the student's name.
-
-    Args:
-        attendance_dict: A dictionary with days as keys and lists of students as values.
-        day: The day of the week to update attendance for.
-        student: The name of the student to add to the attendance.
-
-    Returns:
-        The updated dictionary with the student added to the attendance for the specified day.
-    """
-    # If the day is already in the dictionary, append the student to that day's list
-    if day in attendance_dict:
-        # Ensuring no duplicates if the student is already in the list for that day
-        if student not in attendance_dict[day]:
-            attendance_dict[day].append(student)
-    else:
-        # If the day is not in the dictionary, create a new entry with the student in a new list
-        attendance_dict[day] = [student]
-    return attendance_dict
 
 
 def favorite_colors(names_to_colors: dict[str, str]) -> str:
@@ -73,9 +31,6 @@ def favorite_colors(names_to_colors: dict[str, str]) -> str:
     # Sort colors by the highest count and then by the earliest appearance.
     sorted_colors = sorted(color_counts.items(), 
                            key=lambda item: (-item[1]['count'], item[1]['first_index']))
-    
-    # Return the color with the highest count that appeared first.
-
 
 
 def count(values_list: list[str]) -> dict[str, int]:
@@ -93,7 +48,6 @@ def count(values_list: list[str]) -> dict[str, int]:
             count_dict[item] += 1
         else:
             count_dict[item] = 1
-
 
 
 def alphabetizer(words_list: list[str]) -> dict[str, list[str]]:
@@ -116,7 +70,6 @@ def alphabetizer(words_list: list[str]) -> dict[str, list[str]]:
         # Append the current word to the list that corresponds to the first letter
         alphabetized_dict[first_letter].append(word)
 
-
 def update_attendance(attendance_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """
     Update the attendance record for a given day with the student's name.
@@ -137,24 +90,3 @@ def update_attendance(attendance_dict: dict[str, list[str]], day: str, student: 
     else:
         # If the day is not in the dictionary, create a new entry with the student in a new list
         attendance_dict[day] = [student]
-
-    """
-    Update the attendance record for a given day with the student's name.
-
-    Args:
-        attendance_dict: A dictionary with days as keys and lists of students as values.
-        day: The day of the week to update attendance for.
-        student: The name of the student to add to the attendance.
-
-    Returns:
-        The updated dictionary with the student added to the attendance for the specified day.
-    """
-    # If the day is already in the dictionary, append the student to that day's list
-    if day in attendance_dict:
-        # Ensuring no duplicates if the student is already in the list for that day
-        if student not in attendance_dict[day]:
-            attendance_dict[day].append(student)
-    else:
-        # If the day is not in the dictionary, create a new entry with the student in a new list
-        attendance_dict[day] = [student]
-
