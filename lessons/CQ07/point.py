@@ -5,7 +5,7 @@ __author__ = "730521715"
 class Point:
     """Represents a point in a 2D space with x and y coordinates."""
 
-    def __init__(self, x_init: float, y_init: float):
+    def __init__(self, x_init: 'float', y_init: 'float'):
         """Initialize a new Point instance with x and y coordinates."""
         self.x = x_init
         self.y = y_init
