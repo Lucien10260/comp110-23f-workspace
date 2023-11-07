@@ -2,6 +2,7 @@
 
 __author__ = "730521715"
 
+
 class Point:
     """Represents a point in a 2D space with x and y coordinates."""
 
