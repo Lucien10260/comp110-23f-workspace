@@ -3,34 +3,18 @@
 __author__ = "730521715"
 
 class Point:
-    """
-    Represents a point in a 2D space with x and y coordinates.
-    """
+    """Represents a point in a 2D space with x and y coordinates."""
 
     def __init__(self, x_init: float, y_init: float):
-        """
-        Initialize a new Point instance with x and y coordinates.
-        
-        :param x_init: Initial x-coordinate
-        :param y_init: Initial y-coordinate
-        """
+        """Initialize a new Point instance with x and y coordinates."""
         self.x = x_init
         self.y = y_init
 
     def scale_by(self, factor: int) -> None:
-        """
-        Scale the point by a given factor in place.
-        
-        :param factor: The factor by which to scale the x and y coordinates
-        """
+        """Scale the point by a given factor in place."""
         self.x *= factor
         self.y *= factor
 
     def scale(self, factor: int) -> 'Point':
-        """
-        Scale the point by a given factor and return a new Point object.
-        
-        :param factor: The factor by which to scale the x and y coordinates
-        :return: A new Point object with scaled coordinates
-        """
+        """Scale the point by a given factor and return a new Point object."""
         return Point(self.x * factor, self.y * factor)
