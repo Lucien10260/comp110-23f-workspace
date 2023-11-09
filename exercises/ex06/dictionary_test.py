@@ -30,8 +30,7 @@ def test_favorite_color_normal_case() -> None:
 
 
 def test_favorite_color_empty_dict() -> None:
-    assert favorite_color({}) is
-w None
+    assert favorite_color({}) is None
 
 
 def test_favorite_color_tie() -> None:
