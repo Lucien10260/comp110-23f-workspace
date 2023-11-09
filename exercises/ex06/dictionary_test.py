@@ -5,7 +5,7 @@ __author__ = "730521715"
 import pytest
 
 # Assuming the functions are defined in a file named `functions.py` which is in the same directory.
-from functions import invert, favorite_color, count, alphabetize, update_attendance
+from exercises.ex06.dictionary import invert, favorite_color, count, alphabetize, update_attendance
 
 # Unit tests for invert
 def test_invert_normal_case() -> None:
