@@ -26,6 +26,7 @@ def test_invert_value_collision() -> None:
     with pytest.raises(ValueError):
         invert({'a': 1, 'b': 1})
 
+
 # Unit tests for favorite_color
 def test_favorite_color_normal_case() -> None:
     """Test favorite_color with a clear winner color."""
