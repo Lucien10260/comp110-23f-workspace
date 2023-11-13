@@ -35,6 +35,4 @@ class Point:
 
     def __add__(self, factor: Union[int, float]) -> 'Point':
         """Add a value to the point's coordinates."""
-        """Add a value to the point's coordinates."""
-        """Add a value to the point's coordinates."""
-        return Point(self.x + factor, self.y + factor)        return Point(self.x + factor, self.y + factor)        
+        return Point(self.x + factor, self.y + factor)
