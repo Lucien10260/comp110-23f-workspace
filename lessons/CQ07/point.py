@@ -3,9 +3,6 @@
 __author__ = "730521715"
 
 
-from typing import Union
-
-
 class Point:
     """Represents a point in a 2D space with x and y coordinates."""
 
