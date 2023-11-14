@@ -1,12 +1,15 @@
+"""Module for the Point class used in CQ07 challenge question.
+
+This module contains the Point class which represents a (x, y) coordinate point.
+It includes methods for scaling and arithmetic operations on points.
+"""
+
 from __future__ import annotations
 
-"""CQ08."""
+__author__ = "730521715
 
-__author__ = "730521715"
-
-
+"
 class Point:
-
     """Class to represent a (x, y) coordinate point."""
 
     def __init__(self, init_x: float = 0.0, init_y: float = 0.0):
