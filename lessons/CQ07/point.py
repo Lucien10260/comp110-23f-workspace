@@ -1,34 +1,34 @@
-"""CQ07."""
+"""CQ08."""
 
 __author__ = "730521715"
 
-from typing import Union
+from typing import Union8
 
+class Point:
+    """Class to represent a (x, y) coordinate point."""
 
-class Point: 
+    def __init__(self, init_x: float = 0.0, init_y: float = 0.0):
+        """Construct a point with optional default values."""
+        self.x = init_x
+        self.y = init_y
 
-    def __init__(self, x_init: float = 0.0, y_init: float = 0.0):
-        """Initialize a new Point instance with x and y coordinates."""
-        self.x = x_init
-        self.y = y_init
+    def __str__(self) -> str:
+        """Return a string representation of the point."""
+        return f"x: {self.x}; y: {self.y}"
+
+    def __mul__(self, factor: Union[int, float]) -> Point:
+        """Return a new Point, scaling both coordinates by the given factor."""
+        return Point(self.x * factor, self.y * factor)
+
+    def __add__(self, factor: Union[int, float]) -> Point:
+        """Return a new Point, adding the factor to both coordinates."""
+        return Point(self.x + factor, self.y + factor)
 
     def scale_by(self, factor: int) -> None:
-        """Scale the point by a given factor in place."""
+        """Modify the point."""
         self.x *= factor
         self.y *= factor
 
     def scale(self, factor: int) -> Point:
-        """Scale the point by a given factor and return a new Point object."""
+        """Make a new point."""
         return Point(self.x * factor, self.y * factor)
-    
-    def __str__(self) -> str:
-        """String representation of a Point."""
-        return f"x: {self.x}; y: {self.y}"
-
-    def __mul__(self, factor: Union[int,float]) -> Point:
-        """Multiply the point's coordinates by a factor."""
-        return Point(self.x * factor, self.y * factor)
-
-    def __add__(self, factor: Union[int,float]) -> Point:
-        """Add a value to the point's coordinates."""
-        return Point(self.x + factor, self.y + factor)
