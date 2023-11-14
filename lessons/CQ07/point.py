@@ -2,7 +2,8 @@
 
 __author__ = "730521715"
 
-from typing import Union8
+from __future__ import annotations
+from typing import Union
 
 class Point:
     """Class to represent a (x, y) coordinate point."""
@@ -17,11 +18,11 @@ class Point:
         return f"x: {self.x}; y: {self.y}"
 
     def __mul__(self, factor: Union[int, float]) -> Point:
-        """Return a new Point, scaling both coordinates by the given factor."""
+        """Return a new Point with scaled x and y coordinates."""
         return Point(self.x * factor, self.y * factor)
 
     def __add__(self, factor: Union[int, float]) -> Point:
-        """Return a new Point, adding the factor to both coordinates."""
+        """Return a new Point with increased x and y coordinates."""
         return Point(self.x + factor, self.y + factor)
 
     def scale_by(self, factor: int) -> None:
