@@ -1,10 +1,9 @@
-"""CQ08."""
-
-__author__ = "730521715"
-
 from __future__ import annotations
 from typing import Union
 
+"""CQ08."""
+
+__author__ = "730521715"
 class Point:
     """Class to represent a (x, y) coordinate point."""
 
