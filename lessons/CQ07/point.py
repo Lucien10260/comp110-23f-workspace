@@ -6,9 +6,8 @@ It includes methods for scaling and arithmetic operations on points.
 
 from __future__ import annotations
 
-__author__ = "730521715
+__author__ = "730521715"
 
-"
 class Point:
     """Class to represent a (x, y) coordinate point."""
 
