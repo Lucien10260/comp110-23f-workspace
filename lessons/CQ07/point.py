@@ -2,11 +2,10 @@
 
 __author__ = "730521715"
 
-
-class Point:
-    """Represents a point in a 2D space with x and y coordinates."""
-
-    def __init__(self, x_init: 'float', y_init: 'float'):
+class Point: 
+"""Represents a point in a 2D space with x and y coordinates."""
+    
+    def __init__(self, x_init: float, y_init: float):
         """Initialize a new Point instance with x and y coordinates."""
         self.x = x_init
         self.y = y_init
@@ -16,7 +15,7 @@ class Point:
         self.x *= factor
         self.y *= factor
 
-    def scale(self, factor: int) -> 'Point':
+    def scale(self, factor: int) -> Point:
         """Scale the point by a given factor and return a new Point object."""
         return Point(self.x * factor, self.y * factor)
     
@@ -24,10 +23,10 @@ class Point:
         """String representation of a Point."""
         return f"x: {self.x}; y: {self.y}"
 
-    def __mul__(self, factor: int | float) -> 'Point':
+    def __mul__(self, factor: int | float) -> Point:
         """Multiply the point's coordinates by a factor."""
         return Point(self.x * factor, self.y * factor)
 
-    def __add__(self, factor: int | float) -> 'Point':
+    def __add__(self, factor: int | float) -> Point:
         """Add a value to the point's coordinates."""
         return Point(self.x + factor, self.y + factor)
