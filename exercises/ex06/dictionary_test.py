@@ -1,98 +1,93 @@
-"""Dictionary_test module: Unit tests for dictionary utility functions."""
+"""Dictionary_test."""
 
-
-__author__ = "730521715"
-
+__author__ = "73052171.ex06.dictionary "
 
 import pytest
+from dictionary import invert
 
+def test_invert_normal():
+    """Test invert with a normal dictionary."""
+    assert invert({'a': '1', 'b': '2'}) == {'1': 'a', '2': 'b'}
 
-from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
+def test_invert_single_item():
+    """Test invert with a dictionary with one item."""
+    assert invert({'a': '1'}) == {'1': 'a'}
 
+def test_invert_raise_key_error():
+    """Test invert should raise KeyError on duplicate values."""
+    with pytest.raises(KeyError):
+        invert({'a': 'apple', 'b': 'apple'})
 
+from dictionary import favorite_color
 
-# Unit tests for invert
-def test_invert_normal_case() -> None:
-    """Test inverting a dictionary with distinct key-value pairs."""
-    assert invert({'a': 1, 'b': 2, 'c': 3}) == {1: 'a', 2: 'b', 3: 'c'}
-
-
-def test_invert_empty_dict() -> None:
-    """Test inverting an empty dictionary."""
-    assert invert({}) == {}
-
-
-def test_invert_value_collision() -> None:
-    """Test inverting a dictionary with value collisions raises a ValueError."""
-    with pytest.raises(ValueError):
-        invert({'a': 1, 'b': 1})
-
-
-# Unit tests for favorite_color
-def test_favorite_color_normal_case() -> None:
-    """Test favorite_color with a clear winner color."""
+def test_favorite_color_normal():
+    """Test favorite_color with normal input."""
     assert favorite_color({'Alice': 'blue', 'Bob': 'green', 'Charlie': 'blue'}) == 'blue'
 
+def test_favorite_color_tie():
+    """Test favorite_color with a tie."""
+    assert favorite_color({'Alice': 'blue', 'Bob': 'green', 'Charlie': 'green', 'David': 'blue'}) in ['blue', 'green']
 
-def test_favorite_color_empty_dict() -> None:
+def test_favorite_color_empty():
     """Test favorite_color with an empty dictionary."""
-    assert favorite_color({}) is None
+    with pytest.raises(ValueError):
+        favorite_color({})
 
+from dictionary import count
 
-def test_favorite_color_tie() -> None:
-    """Test favorite_color when there is a tie in colors."""
-    assert favorite_color({'Alice': 'blue', 'Bob': 'green', 'Charlie': 'green'}) in ['blue', 'green']
+def test_count_normal():
+    """Test count with multiple duplicates."""
+    assert count(['a', 'b', 'a', 'c', 'b', 'a']) == {'a': 3, 'b': 2, 'c': 1}
 
+def test_count_single_item():
+    """Test count with a single item."""
+    assert count(['a']) == {'a': 1}
 
-# Unit tests for count
-def test_count_normal_case() -> None:
-    """Test counting elements in a list with multiple occurrences."""
-    assert count(['red', 'blue', 'red', 'green', 'blue', 'blue']) == {'red': 2, 'blue': 3, 'green': 1}
-
-
-def test_count_empty_list() -> None:
-    """Test counting elements in an empty list."""
+def test_count_empty():
+    """Test count with an empty list."""
     assert count([]) == {}
 
+from dictionary import count
 
-def test_count_single_element() -> None:
-    """Test counting elements in a list with a single element."""
-    assert count(['red']) == {'red': 1}
+def test_count_normal():
+    """Test count with multiple duplicates."""
+    assert count(['a', 'b', 'a', 'c', 'b', 'a']) == {'a': 3, 'b': 2, 'c': 1}
 
+def test_count_single_item():
+    """Test count with a single item."""
+    assert count(['a']) == {'a': 1}
 
-# Unit tests for alphabetize
-def test_alphabetize_normal_case() -> None:
-    """Test alphabetizing a list of strings."""
-    assert alphabetize(['hello', 'apple', 'banana']) == ['apple', 'banana', 'hello']
+def test_count_empty():
+    """Test count with an empty list."""
+    assert count([]) == {}
 
+from dictionary import alphabetizer
 
-def test_alphabetize_empty_list() -> None:
-    """Test alphabetizing an empty list."""
-    assert alphabetize([]) == []
+def test_alphabetizer_normal():
+    """Test alphabetizer with different first letters."""
+    assert alphabetizer(['apple', 'banana', 'apricot', 'blueberry']) == {'a': ['apple', 'apricot'], 'b': ['banana', 'blueberry']}
 
+def test_alphabetizer_same_letter():
+    """Test alphabetizer with words starting with the same letter."""
+    assert alphabetizer(['apple', 'apricot']) == {'a': ['apple', 'apricot']}
 
-def test_alphabetize_case_insensitivity() -> None:
-    """Test alphabetizing a list of strings with varying case."""
-    assert alphabetize(['Hello', 'apple']) == ['apple', 'Hello']
+def test_alphabetizer_empty():
+    """Test alphabetizer with an empty list."""
+    assert alphabetizer([]) == {}
 
+from dictionary import update_attendance
 
-# Unit tests for update_attendance
-def test_update_attendance_normal_case() -> None:
-    """Test updating attendance with a new name on an existing day."""
-    attendance = {'Monday': ['Alice', 'Bob'], 'Wednesday': [], 'Friday': ['Alice', 'Charlie']}
-    update_attendance(attendance, 'Monday', 'Charlie')
-    assert attendance == {'Monday': ['Alice', 'Bob', 'Charlie'], 'Wednesday': [], 'Friday': ['Alice', 'Charlie']}
-
-
-def test_update_attendance_new_day() -> None:
-    """Test updating attendance by adding a new day with a name."""
+def test_update_attendance_add_new_day():
+    """Test update_attendance adding a student to a new day."""
     attendance = {}
-    update_attendance(attendance, 'Tuesday', 'Alice')
-    assert attendance == {'Tuesday': ['Alice']}
+    assert update_attendance(attendance, 'Monday', 'Alice') == {'Monday': ['Alice']}
 
+def test_update_attendance_add_to_existing_day():
+    """Test update_attendance adding a student to an existing day."""
+    attendance = {'Monday': ['Alice']}
+    assert update_attendance(attendance, 'Monday', 'Bob') == {'Monday': ['Alice', 'Bob']}
 
-def test_update_attendance_empty_case() -> None:
-    """Test updating attendance with a new name on an empty day."""
-    attendance = {'Monday': []}
-    update_attendance(attendance, 'Monday', 'Bob')
-    assert attendance == {'Monday': ['Bob']}
+def test_update_attendance_add_duplicate():
+    """Test update_attendance adding a duplicate entry."""
+    attendance = {'Monday': ['Alice']}
+    assert update_attendance(attendance, 'Monday', 'Alice') == {'Monday': ['Alice']}
