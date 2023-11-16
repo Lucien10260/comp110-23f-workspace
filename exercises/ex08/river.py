@@ -1,4 +1,4 @@
-s"""River class for ecosystem simulation."""
+"""River class for ecosystem simulation."""
 
 __author__ = "730521715"
 
