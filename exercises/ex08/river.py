@@ -1,9 +1,10 @@
-"""River class for ecosystem simulation."""
+s"""River class for ecosystem simulation."""
 
 __author__ = "730521715"
 
 from exercises.ex08.bear import Bear 
 from exercises.ex08.fish import Fish 
+
 
 class River:
     """Represent a river in the ecosystem simulation."""
