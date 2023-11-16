@@ -7,7 +7,8 @@ __author__ = "730521715"
 import pytest
 
 
-from exercises.ex06.dictionary import invert, favorite_color, count, alphabetize, update_attendance
+from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
+
 
 
 # Unit tests for invert
